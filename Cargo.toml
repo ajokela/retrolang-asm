@@ -1,0 +1,39 @@
+[package]
+name = "retrolang-asm"
+version = "0.1.0"
+edition = "2018"
+description = "Z80 assembler for RetroLang (based on FantASM by Guy Black)"
+authors = ["Guy Black <captainblack@zx-spectrum.org.uk>", "Alex Jokela"]
+license = "BSD-2-Clause"
+repository = "https://github.com/ajokela/retrolang-asm"
+homepage = "https://github.com/ajokela/retrolang-asm"
+readme = "README.md"
+keywords = ["z80", "assembler", "retro-computing", "assembly"]
+categories = ["compilers", "command-line-utilities", "development-tools"]
+build = "build.rs"
+
+[[bin]]
+name = "retrolang-asm"
+path = "src/main.rs"
+
+[dependencies]
+asciimath = { package = "retrolang-math", version = "0.1" }
+argparse = "0.2.2"
+colour = "0.5.0"
+regex = "1"
+lazy_static = "1.4.0"
+version = "3.0.0"
+rand = "0.7.3"
+ascii = "1"
+pad = "0.1.6"
+indexmap = "1.4.0"
+envmnt = "0.8.2"
+
+[build-dependencies]
+chrono = "0.4.11"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = 'abort'
