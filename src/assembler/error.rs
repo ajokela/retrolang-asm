@@ -47,7 +47,7 @@ impl std::convert::From<std::string::String> for Error {
             line_no: -1,
             message: s,
             level: ErrorLevel::Fatal,
-            file_name: "FantASM".to_string(),
+            file_name: "retrolang-asm".to_string(),
         }
     }
 }
@@ -58,7 +58,7 @@ impl std::convert::From<std::io::Error> for Error {
             line_no: -1,
             message: e.to_string(),
             level: ErrorLevel::Fatal,
-            file_name: "FantASM".to_string(),
+            file_name: "retrolang-asm".to_string(),
         }
     }
 }

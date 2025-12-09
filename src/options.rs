@@ -29,7 +29,7 @@ pub struct Options {
 
 impl Options {
     pub fn parse() -> Result<Options, String> {
-        let description = format!("\nFantASM {} (Octarine) [{}]\n\u{000A9}2019 Captain Black\n", version!(), env!("BUILD_DATE"));
+        let description = format!("\nretrolang-asm {} [{}]\nBased on FantASM by Guy Black\n", version!(), env!("BUILD_DATE"));
         let mut options = Options::default();
         {
             let mut parser = ArgumentParser::new();
@@ -88,7 +88,7 @@ impl Options {
         }
 
         if options.version {
-            println!("FantASM {}", version!());
+            println!("retrolang-asm {}", version!());
             exit(0);
         }
 
